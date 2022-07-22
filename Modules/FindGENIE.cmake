@@ -32,6 +32,10 @@ if (_cet_Messenger_h)
 endif()
 if (EXISTS "${_cet_GENIE_include_dir}")
   set(GENIE_FOUND TRUE)
+  string(REGEX REPLACE "^v(.*)$" "\\1" ${CMAKE_FIND_PACKAGE_NAME}_VERSION
+    "$ENV{GENIE_VERSION}")
+  string(REPLACE "_" "." ${CMAKE_FIND_PACKAGE_NAME}_VERSION
+    "${${CMAKE_FIND_PACKAGE_NAME}_VERSION}")
   get_filename_component(_cet_GENIE_dir "${_cet_GENIE_include_dir}" PATH)
   if (_cet_GENIE_dir STREQUAL "/")
     unset(_cet_GENIE_dir)
@@ -41,13 +45,26 @@ if (EXISTS "${_cet_GENIE_include_dir}")
 endif()
 if (GENIE_FOUND)
   set(GENIE_LIB_LIST)
-  set(_cet_genie_libs GFwMsg GFwReg GFwAlg GFwInt GFwGHEP GFwNum GFwUtl GFwParDat
+  if("${${CMAKE_FIND_PACKAGE_NAME}_VERSION}" VERSION_LESS 3.02 )
+    set(_cet_genie_libs GFwMsg GFwReg GFwAlg GFwInt GFwGHEP GFwNum GFwUtl GFwParDat
                   GFwEG GFwNtp GPhXSIg GPhPDF GPhNuclSt GPhCmn GPhDcy GPhHadTransp
                   GPhHadnz GPhDeEx GPhAMNGXS GPhAMNGEG GPhChmXS GPhCohXS GPhCohEG
                   GPhDISXS GPhDISEG GPhDfrcXS GPhDfrcEG GPhGlwResXS GPhGlwResEG
                   GPhIBDXS GPhIBDEG GPhMNucXS GPhMNucEG GPhMEL GPhNuElXS GPhNuElEG
                   GPhQELXS GPhQELEG GPhResXS GPhResEG GPhStrXS
                   GPhStrEG GPhNDcy GTlGeo GTlFlx GRwFwk GRwIO GRwClc)
+  else()
+    # GENIE 3.02.00
+    set(_cet_genie_libs GFwMsg GFwReg GFwAlg GFwInt GFwGHEP GFwNum GFwUtl GFwParDat
+                   GFwEG GFwNtp GPhXSIg GPhPDF GPhNuclSt GPhCmn GPhDcy GPhHadTransp
+                   GPhHadnz GPhDeEx GPhAMNGXS GPhAMNGEG GPhChmXS GPhCohXS GPhCohEG
+                   GPhDISXS GPhDISEG GPhDfrcXS GPhDfrcEG GPhGlwResXS GPhGlwResEG
+                   GPhIBDXS GPhIBDEG GPhHadTens GPhMNucXS GPhMNucEG GPhMEL
+                   GPhNuElXS GPhNuElEG GPhQELXS GPhQELEG GPhResXS GPhResEG
+                   GPhStrXS GPhStrEG GPhHEDISXS GPhHEDISEG
+                   GPhNNBarOsc GPhNHL GPhBDMXS GPHBDMEG GPhNDcy
+                   GTlGeo GTlFlx GRwFwk GRwIO GRwClc)
+  endif()
   foreach (_glib IN LISTS _cet_genie_libs)
     find_library(${_glib}_LIBRARY NAMES ${_glib} PATHS ${GENIE_LIBRARY_DIR})
     if(${_glib}_LIBRARY)
@@ -66,6 +83,7 @@ endif()
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(GENIE
+  VERSION_VAR ${CMAKE_FIND_PACKAGE_NAME}_VERSION
   REQUIRED_VARS GENIE_FOUND
   GENIE_INCLUDE_DIRS
   GENIE_LIB_LIST)
