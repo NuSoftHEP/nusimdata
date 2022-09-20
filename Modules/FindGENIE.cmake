@@ -8,17 +8,9 @@ Finds GENIE and all its components
 
 #]================================================================]
 
-# this is the order that GENIE "recommends" using 'genie-config --libs'
-#
-# (GENIE 3.02 and newer)
-#   -lGFwMsg -lGFwReg -lGFwAlg -lGFwInt -lGFwGHEP -lGFwNum -lGFwUtl -lGFwParDat
-#   -lGFwEG -lGFwNtp -lGPhXSIg -lGPhPDF -lGPhNuclSt -lGPhCmn -lGPhDcy -lGPhHadTransp
-#   -lGPhHadnz -lGPhDeEx -lGPhAMNGXS -lGPhAMNGEG -lGPhChmXS -lGPhCohXS -lGPhCohEG
-#   -lGPhDISXS -lGPhDISEG -lGPhDfrcXS -lGPhDfrcEG -lGPhHELptnXS -lGPhHELptnEG
-#   -lGPhIBDXS -lGPhIBDEG -lGPhHadTens -lGPhMNucXS -lGPhMNucEG -lGPhMEL -lGPhNuElXS
-#   -lGPhNuElEG -lGPhQELXS -lGPhQELEG -lGPhResXS -lGPhResEG -lGPhStrXS
-#   -lGPhStrEG -lGPhHEDISXS -lGPhHEDISEG -lGPhNDcy -lGPhNNBarOsc -lGPhBDMXS -lGPhBDMEG
-#   -lGPhNHL -lGTlGeo -lGTlFlx
+# The order that GENIE "recommends" is found using the two config files.
+# 'genie-config --libs'
+# 'genie-reweight-config --libs'
 
 # headers
 find_file(_cet_Messenger_h NAMES Messenger.h HINTS ENV GENIE_INC
@@ -65,7 +57,7 @@ if (GENIE_FOUND)
                   GPhNuElXS GPhNuElEG GPhQELXS GPhQELEG GPhResXS GPhResEG
                   GPhStrXS GPhStrEG GPhHEDISXS GPhHEDISEG
                   GPhNDcy GPhNNBarOsc GPhBDMXS GPhBDMEG GPhNHL
-                  GTlGeo GTlFlx)
+                  GTlGeo GTlFlx GRwFwk GRwIO GRwClc)
   endif()
   foreach (_glib IN LISTS _cet_genie_libs)
     find_library(${_glib}_LIBRARY NAMES ${_glib} PATHS ${GENIE_LIBRARY_DIR})
