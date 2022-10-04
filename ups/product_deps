@@ -249,7 +249,7 @@ libdir	fq_dir		lib
 #
 ####################################
 product         version     qual  flags    <table_format=2>
-canvas_root_io  v1_09_04    -     only_for_build
+canvas_root_io  v1_09_04a    -     only_for_build
 canvas          v3_12_04
 dk2nudata       v01_10_00d
 cetmodules      v2_30_01    -     only_for_build
