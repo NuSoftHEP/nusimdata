@@ -91,6 +91,7 @@ namespace simb {
     // Particle list; e.g., an excited nucleus with low kinetic energy
     // emits a photon with high kinetic energy.
     int Mother() const;
+    void SetMother(int mother);
 
     const TVector3& Polarization() const;
     void            SetPolarization( const TVector3& p );
