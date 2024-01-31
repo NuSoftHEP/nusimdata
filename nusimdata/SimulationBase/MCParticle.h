@@ -269,6 +269,7 @@ inline       void            simb::MCParticle::AddDaughter(int const trackID)   
 inline       void            simb::MCParticle::SetPolarization(TVector3 const& p) { fpolarization = p;                         }
 inline       void            simb::MCParticle::SetRescatter(int code)             { frescatter    = code;                      }
 inline       void            simb::MCParticle::SetWeight(double wt)               { fWeight       = wt;                        }
+inline       void            simb::MCParticle::SetMother(int mother)              { fmother       = mother;                    }
 
 // definition of the < operator
 inline       bool            simb::MCParticle::operator<( const simb::MCParticle& other ) const { return ftrackId < other.ftrackId; }
