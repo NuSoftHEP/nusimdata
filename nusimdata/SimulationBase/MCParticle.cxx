@@ -94,6 +94,7 @@ namespace simb {
     , fGvtx(p.GetGvtx())
     , frescatter(p.Rescatter())
   {
+
     ftrackId = p.TrackId()>=0? p.TrackId()+offset : p.TrackId()-offset;
     fmother  = p.Mother()>=0?  p.Mother()+offset  : p.Mother()-offset;
 
