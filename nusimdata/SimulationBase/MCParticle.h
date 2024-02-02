@@ -91,6 +91,7 @@ namespace simb {
     // Particle list; e.g., an excited nucleus with low kinetic energy
     // emits a photon with high kinetic energy.
     int Mother() const;
+    void SetMother(int mother);
 
     const TVector3& Polarization() const;
     void            SetPolarization( const TVector3& p );
@@ -269,6 +270,7 @@ inline       void            simb::MCParticle::AddDaughter(int const trackID)   
 inline       void            simb::MCParticle::SetPolarization(TVector3 const& p) { fpolarization = p;                         }
 inline       void            simb::MCParticle::SetRescatter(int code)             { frescatter    = code;                      }
 inline       void            simb::MCParticle::SetWeight(double wt)               { fWeight       = wt;                        }
+inline       void            simb::MCParticle::SetMother(int mother)              { fmother       = mother;                    }
 
 // definition of the < operator
 inline       bool            simb::MCParticle::operator<( const simb::MCParticle& other ) const { return ftrackId < other.ftrackId; }
