@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 find_package(cetmodules 2.29.06 REQUIRED)
-project(nusimdata VERSION 1.28.03 LANGUAGES CXX)
+project(nusimdata VERSION 1.28.04 LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -21,6 +21,8 @@ cet_set_compiler_flags(DIAGS CAUTIOUS WERROR
                                    $<$<COMPILE_LANGUAGE:CXX>:-D_GLIBCXX_USE_NANOSLEEP 
                                    -Wno-unused-local-typedefs -Wno-variadic-macros>)
 cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
+
+find_package(nufinder REQUIRED EXPORT)
 
 # source
 add_subdirectory (Modules)
