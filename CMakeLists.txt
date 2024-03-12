@@ -22,7 +22,7 @@ cet_set_compiler_flags(DIAGS CAUTIOUS WERROR
                                    -Wno-unused-local-typedefs -Wno-variadic-macros>)
 cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 
-find_package(nufinder REQUIRED)
+find_package(nufinder REQUIRED EXPORT)
 
 # source
 add_subdirectory (Modules)
