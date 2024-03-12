@@ -252,7 +252,7 @@ product         version     qual  flags    <table_format=2>
 canvas_root_io  v1_13_05    -     only_for_build
 canvas          v3_16_04
 dk2nudata       v01_10_01g
-nufinder        v1_02_01       -	only_for_build
+nufinder        v1_02_01
 cetmodules      v3_24_01    -     only_for_build
 end_product_list
 ####################################
