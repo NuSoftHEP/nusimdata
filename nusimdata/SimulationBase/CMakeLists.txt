@@ -20,5 +20,4 @@ cet_make_library(SOURCE GTruth.cxx  MCFlux.cxx  MCNeutrino.cxx
 art_dictionary(DICTIONARY_LIBRARIES PRIVATE nusimdata::SimulationBase dk2nu::Tree)
 
 install_headers()
-install_fhicl()
 install_source()
