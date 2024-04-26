@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 find_package(cetmodules 2.29.06 REQUIRED)
-project(nusimdata VERSION 1.28.05 LANGUAGES CXX)
+project(nusimdata VERSION 1.28.06 LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
