@@ -69,6 +69,10 @@ namespace simb{
   //......................................................................
   std::ostream& operator<< (std::ostream& o, simb::MCTruth const& a)
   {
+
+    o << "MCTruth:" << std::endl;
+    o << a.GeneratorInfo() << std::endl;
+
     if(a.Origin() == kCosmicRay) 
       o << "This is a cosmic ray event" << std::endl;
     else if(a.Origin() == kBeamNeutrino){

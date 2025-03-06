@@ -9,6 +9,7 @@ find_package(dk2nudata REQUIRED PUBLIC)
 
 cet_make_library(SOURCE GTruth.cxx  MCFlux.cxx  MCNeutrino.cxx
                         MCParticle.cxx  MCTrajectory.cxx  MCTruth.cxx
+                        MCGeneratorInfo.cxx
                LIBRARIES PRIVATE
                canvas::canvas
                cetlib_except::cetlib_except
