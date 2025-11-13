@@ -6,13 +6,13 @@
 cmake_minimum_required(VERSION 3.19 FATAL_ERROR)
 
 find_package(cetmodules 2.29.06 REQUIRED)
-project(nusimdata VERSION 1.29.01 LANGUAGES CXX)
+project(nusimdata VERSION 1.29.02 LANGUAGES CXX)
 
 include(CetCMakeEnv)
 cet_cmake_env()
 
 # Find our own CMake modules, and tell everyone else where to find them.
-cet_cmake_module_directories(Modules)
+#cet_cmake_module_directories(Modules)
 
 # -D_GLIBCXX_USE_NANOSLEEP is needed to make std::this_thread::sleep_for available.
 cet_set_compiler_flags(DIAGS CAUTIOUS WERROR 
@@ -25,7 +25,7 @@ cet_report_compiler_flags(REPORT_THRESHOLD VERBOSE)
 find_package(nufinder REQUIRED EXPORT)
 
 # source
-add_subdirectory (Modules)
+#add_subdirectory (Modules)
 
 find_package(cetlib_except REQUIRED PUBLIC)
 find_package(canvas REQUIRED PUBLIC)
