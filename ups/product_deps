@@ -87,7 +87,7 @@
 #>  define_pythonpath
 ####################################
 parent		nusimdata
-defaultqual	e26
+defaultqual	e28
 ####################################
 
 ####################################
@@ -249,9 +249,9 @@ libdir	fq_dir		lib
 #
 ####################################
 product         version     qual  flags    <table_format=2>
-canvas_root_io  v1_13_06    -     only_for_build
-canvas          v3_16_04
-dk2nudata       v01_11_00
+canvas_root_io  v1_14_02    -     only_for_build
+canvas          v3_17_01
+dk2nudata       v01_12_00a
 nufinder        v1_03_01
 cetmodules      v3_27_04    -     only_for_build
 end_product_list
@@ -309,10 +309,6 @@ end_product_list
 #
 ####################################
 qualifier  canvas     canvas_root_io  dk2nudata  nufinder  notes
-c14:debug  c14:debug  c14:debug       c14:debug  -nq-
-c14:prof   c14:prof   c14:prof        c14:prof   -nq-
-e26:debug  e26:debug  e26:debug       e26:debug  -nq-
-e26:prof   e26:prof   e26:prof        e26:prof   -nq-
 e28:debug  e28:debug  e28:debug       e28:debug  -nq-
 e28:prof   e28:prof   e28:prof        e28:prof   -nq-
 end_qualifier_list
